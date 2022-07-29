@@ -1,0 +1,52 @@
+
+local_aggregator: "pseudo_grid"
+dataset: "PCN"
+
+DEBUG: 0
+job_name: "Training offset regression"
+
+features: [] # no feature usage incorporated in dataset (TODO)
+
+diameter_percent: 40 # 40% of scene diameter
+
+aug_rot: [0.,0.,np.pi]
+aug_sym: [1.,1.,0.]#[1.,1.,1.]
+
+num_workers: 12
+batch_size: 4
+if DEBUG:
+    num_steps: 2
+    epochs: 10
+else:
+    num_steps: 10000
+    epochs: 50
+if dataset=="PCN":
+    rad = (0.5*diam*1./100.)
+else:
+    rad = (0.5*diam*10./100.)
+
+num_pts = int(15000*rad*0.5)
+if num_pts<1024:
+    num_pts = 1024
+if num_pts>15000:
+    num_pts = 15000
+num_points: num_pts
+
+base_learning_rate: 0.01
+weight_decay: 0.001
+start_epoch: 0
+
+print_freq: 10
+save_freq: 10
+val_freq: 1
+
+log_dir: ""
+
+last_ckpt = os.path.join(job_out_dir,job_name,'current.pth')
+if os.path.isfile(last_ckpt):
+    load_path: last_ckpt
+else:
+    load_path: None
+
+local_rank: 0
+rng_seed: 0

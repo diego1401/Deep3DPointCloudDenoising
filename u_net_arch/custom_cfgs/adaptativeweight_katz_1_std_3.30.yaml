@@ -1,0 +1,71 @@
+adaptive_weight:
+  num_mlps: 1
+  output_conv: false
+  reduction: avg
+  shared_channels: 1
+  weight_softmax: false
+  weight_type: dp
+amp_opt_level: ''
+augment_symmetries:
+- 1
+- 0
+- 0
+backbone: resnet
+base_learning_rate: 0.01
+batch_size: 8
+bottleneck_ratio: 2
+color_drop: 0.2
+data_root: ''
+datasets: EDF
+depth: 2
+epochs: 50
+features:
+- katz_1
+head: resnet_scene_seg
+in_radius: 2.0
+input_features_dim: 4
+katz_params:
+- 3.3
+katz_type: std
+load_path: ''
+local_aggregation_type: adaptive_weight
+local_rank: 0
+log_dir: ./output
+lr_decay_rate: 0.9885531
+lr_decay_steps: 1
+lr_scheduler: step
+momentum: 0.98
+noise_clip: 0.05
+noise_std: 0.001
+npoints:
+- 4096
+- 1152
+- 304
+- 88
+nsamples:
+- 26
+- 31
+- 38
+- 41
+- 39
+num_classes: 2
+num_points: 15000
+num_steps: 1000
+num_workers: 4
+optimizer: sgd
+print_freq: 10
+radius: 0.1
+rng_seed: 0
+sampleDl: 0.04
+save_freq: 10
+scale_high: 1.3
+scale_low: 0.7
+start_epoch: 1
+translate_range: 0.0
+val_freq: 10
+warmup_epoch: -1
+weight_decay: 0.001
+width: 144
+x_angle_range: 0.0
+y_angle_range: 0.0
+z_angle_range: 3.1415926

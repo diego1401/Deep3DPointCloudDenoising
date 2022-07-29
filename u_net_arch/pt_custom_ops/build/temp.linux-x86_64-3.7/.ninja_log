@@ -1,0 +1,14 @@
+# ninja log v5
+0	15235	1654095478	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_grid_subsampling.o	8cbd951eb87bed21
+1	15255	1654095478	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_ordered_ball_query.o	f61f7cb674365591
+1	15307	1654095478	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/group_points.o	2eddf2f51b3d9983
+0	15920	1654095479	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_nearest_query.o	168a111af1e7dbb1
+1	17715	1654095480	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/bindings.o	7be8fd893f0707f4
+1	22525	1654095485	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_nearest_query_gpu.o	e3fb86733a34daaa
+2	22639	1654095485	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/group_points_gpu.o	8dd9ca326efcc29f
+2	33890	1654095497	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_grid_subsampling_gpu.o	46561869397c9577
+1	39698	1654095502	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_ordered_ball_query_gpu.o	5c3009a9b08ed8cb
+11	27421	1654163054	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/group_points_gpu.o	4646f1ca486c9398
+10	27794	1654163054	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_nearest_query_gpu.o	4eb971a66aab5214
+11	42105	1654163069	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_grid_subsampling_gpu.o	ca577021b37e1850
+10	52115	1654163079	/workspace/point-transformer/pt_custom_ops/build/temp.linux-x86_64-3.7/_ext_src/src/masked_ordered_ball_query_gpu.o	7dca1f257a200333

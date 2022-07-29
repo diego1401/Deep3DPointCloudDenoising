@@ -1,0 +1,105 @@
+
+# ---------------------------------------------------------------------------- #
+# Experiment options
+# ---------------------------------------------------------------------------- #
+experiment_name : 'PCN_diverse_l1'
+noise_level : 0.005
+outlier_percentage : 0
+epoch_model_used: 0
+loss: L1
+architecture: PCN
+load_path: '' 
+noise_type: diverse
+
+# ---------------------------------------------------------------------------- #
+# Data options
+# ---------------------------------------------------------------------------- #
+datasets: 'PCN'
+data_root: ''
+num_classes: 2
+input_features_dim: 4
+batch_size: 64 # From PCN code
+num_points: 500
+num_workers: 4
+# data augmentation
+x_angle_range: 0.0
+y_angle_range: 0.0
+z_angle_range: 3.1415926
+
+jitter: 1
+scale_low: 1
+scale_high: 1
+noise_std: 0.00001
+noise_clip: 0.0001
+translate_range: 0.0
+color_drop: 0.2
+augment_symmetries:
+  - 1
+  - 0
+  - 0
+# ---------------------------------------------------------------------------- #
+# Model (num_steps: 2000)
+# ---------------------------------------------------------------------------- #
+backbone: 'resnet'
+head: 'offset_reg_head'
+radius: 0.1
+sampleDl: 0.04
+nsamples:
+  - 26
+  - 31
+  - 38
+  - 41
+  - 39
+npoints:
+  - 4096
+  - 1152
+  - 304
+  - 88
+width: 144
+depth: 2
+bottleneck_ratio: 2
+
+in_radius: 2.0
+num_steps: 2000
+
+# ---------------------------------------------------------------------------- #
+# Training options (epochs: 600)
+# ---------------------------------------------------------------------------- #
+epochs: 2000
+start_epoch: 1
+
+#From PCN code
+base_learning_rate: 0.00000001
+momentum: 0.9
+optimizer: 'sgd'
+####
+
+lr_scheduler: 'step_PCN'  # step,cosine
+warmup_epoch:  -1
+lr_decay_steps: 0.1
+
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+
+
+print_freq: 10
+save_freq: 10
+val_freq: 10
+log_dir: '/point-transformer/log/'
+local_rank: 2
+amp_opt_level: ''
+rng_seed: 0
+
+# ---------------------------------------------------------------------------- #
+# Local Aggregation options
+# ---------------------------------------------------------------------------- #
+local_aggregation_type: 'pseudo_grid'
+pseudo_grid:
+  fixed_kernel_points: 'center'
+  KP_influence: 'linear'
+  KP_extent: 1.0
+  num_kernel_points: 15
+  convolution_mode: 'sum'
+  output_conv: False
