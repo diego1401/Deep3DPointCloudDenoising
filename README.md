@@ -11,3 +11,5 @@ Then every action onwards is done in the docker image:
 - Add a folder with subfolders training, validation and testing with the corresponding shapes. We used the [PointCleanNet Dataset](https://github.com/mrakotosaon/pointcleannet).
 - To train the model for the Offset Regression task use the train_dist.py file and the l1.yaml config file.
 
+See the extra folder for the report and presentation that I used to defend this internship!
+
